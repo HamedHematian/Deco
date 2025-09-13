@@ -452,7 +452,7 @@ if __name__ == '__main__':
     
     parser.add_argument("--cache", type=str, default="chair.pkl",
                         help="pre inited CHAIR evaluator object, for fast loading.")
-    parser.add_argument("--coco_path", type=str, default='.../val2014/annotations',
+    parser.add_argument("--coco_path", type=str, default='val2014/annotations',
                         help="only use for regenerating CHAIR evaluator object, will be ignored if uses cached evaluator.")
     
     parser.add_argument("--save_path", type=str, default="...",
