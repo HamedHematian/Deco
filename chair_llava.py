@@ -109,7 +109,7 @@ def eval_model(args):
             conv.append_message(conv.roles[1], None)
             prompt = conv.get_prompt()
 
-            input_ids = tokenizer_image_token(prompt, tokenizer, IMAGE_TOKEN_INDEX, return_tensors='pt').unsqueeze(0).cuda(5)
+            input_ids = tokenizer_image_token(prompt, tokenizer, IMAGE_TOKEN_INDEX, return_tensors='pt').unsqueeze(0).cuda(0)
             image = Image.open(image_file)
             image_tensor = image_processor.preprocess(image, return_tensors='pt')['pixel_values'][0]            
             stop_str = conv.sep if conv.sep_style != SeparatorStyle.TWO else conv.sep2
@@ -120,7 +120,7 @@ def eval_model(args):
                 with torch.no_grad():
                     output_dict = model.generate(
                         input_ids,
-                        images=image_tensor.unsqueeze(0).half().cuda(5),
+                        images=image_tensor.unsqueeze(0).half().cuda(0),
                         do_sample=True if args.temperature > 0 else False,
                         temperature=args.temperature,
                         top_p=args.top_p,
