@@ -155,7 +155,7 @@ def eval_model(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model-path", type=str, default=".../llava-v1.5-7b")
+    parser.add_argument("--model-path", type=str, default="liuhaotian/llava-v1.5-7b")
     parser.add_argument("--model-base", type=str, default=None)
     parser.add_argument("--answers-file", type=str, default="")
     parser.add_argument("--conv-mode", type=str, default="llava_v1")
