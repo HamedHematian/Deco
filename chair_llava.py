@@ -91,7 +91,7 @@ def eval_model(args):
     tokenizer, model, image_processor, context_len = load_pretrained_model(model_path, args.model_base, model_name,device="cuda:0")
     # answers_file = os.path.expanduser(args.answers_file)
     # os.makedirs(os.path.dirname(answers_file), exist_ok=True)    
-    with open("../opera_log/llava-1.5/ours.jsonl", "r", encoding="utf-8") as f:
+    with open("opera_log/llava-1.5/ours.jsonl", "r", encoding="utf-8") as f:
         for _, data_line in tqdm(enumerate(f.readlines()),total=500):
             line = json.loads(data_line)
             idx = line["image_id"]
