@@ -95,7 +95,7 @@ def eval_model(args):
         for _, data_line in tqdm(enumerate(f.readlines()),total=500):
             line = json.loads(data_line)
             idx = line["image_id"]
-            image_file = "data/val2014/COCO_val2014_" + str(idx).zfill(12) + ".jpg"
+            image_file = "val2014/COCO_val2014_" + str(idx).zfill(12) + ".jpg"
             qs = "Please describe this image in detail."#line["query"]
             cur_prompt = qs
     
